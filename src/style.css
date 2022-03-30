@@ -5,10 +5,15 @@ body {
   background: #f6f6f6;
 }
 
-main, .title, .input-form, .list-item, .list-item,
+main,
+.title,
+.input-form,
+.list-items,
+.list-item,
 .list-item .list-container {
   display: flex;
 }
+
 main {
   flex-direction: column;
   gap: 2px;

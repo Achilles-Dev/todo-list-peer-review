@@ -1,4 +1,4 @@
-import { getToDos } from './store.js';
+import { getToDos, storeTodo } from './store.js';
 
 const removeToDo = () => {
   const todos = getToDos();
@@ -7,7 +7,7 @@ const removeToDo = () => {
     todo.index = index + 1;
   });
 
-  window.localStorage.setItem('todosStored', JSON.stringify(newTodo));
+ storeTodo(newTodo);
 };
 
 export default removeToDo;

@@ -5,6 +5,10 @@ body {
   background: #f6f6f6;
 }
 
+.white {
+  background: #fff;
+}
+
 main,
 .title,
 .input-form,
@@ -23,7 +27,7 @@ main {
 .title {
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  
 }
 
 .title h3 {

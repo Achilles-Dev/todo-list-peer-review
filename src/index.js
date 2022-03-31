@@ -5,6 +5,7 @@ import refreshIcon from './Refresh_icon.svg';
 import {
   addToDo,
   getToDos,
+  storeTodo,
 } from '../modules/store.js';
 import {
   updateToDoCompleted,
@@ -15,11 +16,7 @@ import removeToDo from '../modules/clear.js';
 
 const form = document.querySelector('.input-form');
 
-const addList = document.querySelector('.enter-icon');
-
 const listItems = document.querySelector('.list-items');
-
-const clearButton = document.querySelector('.clear');
 
 const refreshImg = document.querySelector('.refresh-icon');
 refreshImg.src = refreshIcon;
@@ -109,19 +106,21 @@ const populateLists = () => {
     createTodo(list.description);
     list.completed = false;
   });
-  window.localStorage.setItem('todosStored', JSON.stringify(todos));
+  storeTodo(todos);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   populateLists();
 });
 
-addList.addEventListener('click', addTodoItem);
+//addList.addEventListener('click', addTodoItem);
 
 document.querySelector('.input-form input').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    addTodoItem();
+    if (e.target.value !== '') {
+      addTodoItem();
+    }
   }
 });
 
@@ -130,7 +129,14 @@ document.addEventListener('click', (e) => {
     updateToDoListCompleted(e.target);
   } else if (e.target.classList.contains('todo-edit')) {
     updateToDoList(e);
+  } else if (e.target.className === 'enter-icon') {
+    if (e.target.parentNode.firstElementChild.value !== '') {
+      addTodoItem();
+    }
   }
+   else if (e.target.className === 'clear') {
+    removeToDoItem();
+  } 
 });
 
 document.addEventListener('dblclick', (e) => {
@@ -139,4 +145,4 @@ document.addEventListener('dblclick', (e) => {
   }
 });
 
-clearButton.addEventListener('click', removeToDoItem);
+//clearButton.addEventListener('click', removeToDoItem);

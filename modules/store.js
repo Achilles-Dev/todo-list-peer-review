@@ -8,6 +8,10 @@ export const getToDos = () => {
   return todos;
 };
 
+export const storeTodo = (todos) => {
+  return window.localStorage.setItem('todosStored', JSON.stringify(todos));
+}
+
 export const addToDo = (description) => {
   const todos = getToDos();
   const index = todos.length + 1;
@@ -18,5 +22,5 @@ export const addToDo = (description) => {
     index,
   };
   todos.push(todo);
-  window.localStorage.setItem('todosStored', JSON.stringify(todos));
+  storeTodo(todos);
 };

@@ -1,4 +1,4 @@
-import { getToDos } from './store.js';
+import { getToDos, storeTodo } from './store.js';
 
 export const updateToDoCompleted = (completedToDo) => {
   const todoList = completedToDo.nextElementSibling;
@@ -9,7 +9,7 @@ export const updateToDoCompleted = (completedToDo) => {
       todo.completed = !todoCompleted;
     }
   });
-  window.localStorage.setItem('todosStored', JSON.stringify(todos));
+  storeTodo(todos);
 };
 
 export const updateToDoListDescription = (newInput, initialValue) => {
@@ -19,5 +19,5 @@ export const updateToDoListDescription = (newInput, initialValue) => {
       todo.description = newInput;
     }
   });
-  window.localStorage.setItem('todosStored', JSON.stringify(todos));
+  storeTodo(todos);
 };

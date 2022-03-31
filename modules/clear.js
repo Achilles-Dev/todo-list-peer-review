@@ -7,7 +7,7 @@ const removeToDo = () => {
     todo.index = index + 1;
   });
 
- storeTodo(newTodo);
+  storeTodo(newTodo);
 };
 
 export default removeToDo;

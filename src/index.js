@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   populateLists();
 });
 
-//addList.addEventListener('click', addTodoItem);
+// addList.addEventListener('click', addTodoItem);
 
 document.querySelector('.input-form input').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
@@ -133,10 +133,9 @@ document.addEventListener('click', (e) => {
     if (e.target.parentNode.firstElementChild.value !== '') {
       addTodoItem();
     }
-  }
-   else if (e.target.className === 'clear') {
+  } else if (e.target.className === 'clear') {
     removeToDoItem();
-  } 
+  }
 });
 
 document.addEventListener('dblclick', (e) => {
@@ -145,4 +144,4 @@ document.addEventListener('dblclick', (e) => {
   }
 });
 
-//clearButton.addEventListener('click', removeToDoItem);
+// clearButton.addEventListener('click', removeToDoItem);

@@ -8,9 +8,7 @@ export const getToDos = () => {
   return todos;
 };
 
-export const storeTodo = (todos) => {
-  return window.localStorage.setItem('todosStored', JSON.stringify(todos));
-}
+export const storeTodo = (todos) => window.localStorage.setItem('todosStored', JSON.stringify(todos));
 
 export const addToDo = (description) => {
   const todos = getToDos();

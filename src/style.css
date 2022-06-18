@@ -1,0 +1,133 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #f6f6f6;
+}
+
+.white {
+  background: #fff;
+}
+
+main,
+.title,
+.input-form,
+.list-items,
+.list-item,
+.list-item .list-container {
+  display: flex;
+}
+
+main {
+  flex-direction: column;
+  gap: 2px;
+  padding: 2%;
+}
+
+.title {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title h3 {
+  padding: 2%;
+  margin: 0;
+}
+
+.input-form {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+}
+
+.input-form input {
+  padding: 2%;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.input-form input::placeholder {
+  font-style: italic;
+}
+
+.input-form input:focus {
+  outline: none;
+}
+
+.list-items {
+  background: #d3d3d3;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  background: #fff;
+  padding: 1%;
+}
+
+.list-item .list-container {
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 1%;
+}
+
+.completed .checkbox {
+  border: none;
+}
+
+.completed .todo-list {
+  text-decoration: line-through;
+  color: #d3d3d3;
+}
+
+.list-item .list-container .checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.list-item .list-container .todo-list {
+  font-size: 18px;
+}
+
+.list-item .list-container .todo-edit {
+  border: none;
+  width: 100%;
+  font-size: 18px;
+}
+
+.list-item .list-container .todo-edit:focus {
+  outline: none;
+}
+
+.clear {
+  padding: 2%;
+  background: #f6f6f6;
+  border: none;
+  font-size: 16px;
+  opacity: 0.5;
+  box-shadow: 0 2px 8px #00000026;
+}
+
+.clear:hover {
+  cursor: pointer;
+}
+
+.kebab-icon,
+.enter-icon,
+.refresh-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.enter-icon,
+.refresh-icon {
+  padding: 2%;
+}
